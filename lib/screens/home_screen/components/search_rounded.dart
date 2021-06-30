@@ -19,20 +19,27 @@ class SearchRounded extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(
+            horizontal: getPropertionateScreenWidht(20),
+          ),
           child: Row(
             children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: TextStyle(
+                      color: kSecondaryColor,
+                    ),
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                  ),
+                ),
+              ),
               Icon(
                 Icons.search,
                 color: kPrimaryColor,
                 size: getPropertionateScreenWidht(28),
-              ),
-              Text(
-                'Search',
-                style: TextStyle(
-                  color: kSecondaryColor,
-                  fontSize: getPropertionateScreenWidht(18),
-                ),
               ),
             ],
           ),

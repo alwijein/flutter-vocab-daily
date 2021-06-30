@@ -37,7 +37,7 @@ class VocabCard extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.black,
-                blurRadius: 10,
+                blurRadius: 50,
                 spreadRadius: 2,
               ),
             ],
