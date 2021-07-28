@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vocab_daily/bloc/bookmarks_bloc.dart';
+import 'package:vocab_daily/bloc/bookmarks_bloc/bookmarks_bloc.dart';
 import 'package:vocab_daily/shared/shared.dart';
-import 'package:vocab_daily/size_config.dart';
+import 'package:vocab_daily/config/size_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vocab_daily/utils/color_rand.dart';
 

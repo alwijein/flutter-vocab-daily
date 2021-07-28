@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vocab_daily/shared/shared.dart';
-import 'package:vocab_daily/size_config.dart';
+import 'package:vocab_daily/config/size_config.dart';
 
 class CardQuote extends StatelessWidget {
   const CardQuote({

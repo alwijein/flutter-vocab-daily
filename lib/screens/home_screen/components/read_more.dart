@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/shared/shared.dart';
-import 'package:vocab_daily/size_config.dart';
+import 'package:vocab_daily/config/size_config.dart';
 
 class ReadMore extends StatelessWidget {
   const ReadMore({
