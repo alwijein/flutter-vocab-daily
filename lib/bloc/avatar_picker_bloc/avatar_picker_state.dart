@@ -6,5 +6,5 @@ abstract class AvatarPickerState {}
 class AvatarPickerInitial extends AvatarPickerState {}
 
 class OnPicker extends AvatarPickerState {
-  static String avatarPath = '';
+  String avatarPath = '';
 }

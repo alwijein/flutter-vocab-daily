@@ -23,9 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_text_kit: ^4.2.1
   bloc: ^7.0.0
   cupertino_icons: ^1.0.2
+  delayed_display: ^2.0.0
   flutter_bloc: ^7.0.1
+  flutter_easyrefresh: ^2.2.1
   flutter_svg: ^0.22.0
   google_fonts: ^2.1.0
   persistent_bottom_nav_bar: ^4.0.2

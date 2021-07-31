@@ -1,20 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vocab_daily/bloc/avatar_picker_bloc/avatar_picker_bloc.dart';
 import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
 import 'package:vocab_daily/config/size_config.dart';
-import 'package:vocab_daily/models/user_model.dart';
-import 'package:vocab_daily/navbar.dart';
 import 'package:vocab_daily/screens/avatar_screen/components/avatar_builder.dart';
 import 'package:vocab_daily/screens/avatar_screen/components/profile_filled_name.dart';
-import 'package:vocab_daily/shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vocab_daily/shared/shared.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
   @override
+  _BodyState createState() => _BodyState();
+}
+
+TextEditingController textEditingController = new TextEditingController();
+
+class _BodyState extends State<Body> {
+  @override
   Widget build(BuildContext context) {
+    GetSharedPreferences sp = new GetSharedPreferences();
     return SafeArea(
       child: SingleChildScrollView(
         child: SizedBox(
@@ -26,7 +33,9 @@ class Body extends StatelessWidget {
             ),
             child: Column(
               children: [
-                ProfileFilledName(),
+                ProfileFilledName(
+                  textEditingController: textEditingController,
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: getPropertionateScreenHeight(40),
@@ -47,16 +56,27 @@ class Body extends StatelessWidget {
                     child: AvatarBuilder(),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.read<PageBloc>().add(GoToNavbarScreen());
+                BlocBuilder<AvatarPickerBloc, AvatarPickerState>(
+                  builder: (context, state) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        if (state is OnPicker) {
+                          print(textEditingController.text);
+                          GetSharedPreferences.setUsername(
+                              textEditingController.text);
+                          GetSharedPreferences.setPathImg(state.avatarPath);
+                          GetSharedPreferences.firstOpen(true);
+                          context.read<PageBloc>().add(GoToNavbarScreen());
+                        }
+                      },
+                      child: Text(
+                        'Buka Vocab Daily',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    );
                   },
-                  child: Text(
-                    'Buka Vocab Daily',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                 ),
               ],
             ),

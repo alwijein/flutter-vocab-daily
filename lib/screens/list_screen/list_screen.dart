@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocab_daily/screens/list_screen/components/body.dart';
 
 class ListScreen extends StatelessWidget {
   const ListScreen({Key? key}) : super(key: key);
@@ -7,8 +8,9 @@ class ListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List Screen"),
+        title: Text("Daftar Vocab"),
       ),
+      body: Body(),
     );
   }
 }

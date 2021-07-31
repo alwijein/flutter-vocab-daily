@@ -5,6 +5,15 @@ class VocabModel {
   bool status;
 
   List<TenseModel> tense;
+
+  VocabModel({
+    required this.vocabName,
+    required this.description,
+    required this.status,
+    required this.tense,
+  });
+
+  // Dummy Data
   static List<VocabModel> vocabModel = [
     VocabModel(
       vocabName: 'Go',
@@ -50,12 +59,115 @@ class VocabModel {
         ),
       ],
     ),
+    VocabModel(
+      vocabName: 'Now',
+      description: 'Digunakan untuk mengatakan pergi',
+      status: false,
+      tense: [
+        TenseModel(
+          tenseName: 'Simple Present Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Continous Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+      ],
+    ),
+    VocabModel(
+      vocabName: 'Now',
+      description: 'Digunakan untuk mengatakan pergi',
+      status: false,
+      tense: [
+        TenseModel(
+          tenseName: 'Simple Present Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Continous Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+      ],
+    ),
+    VocabModel(
+      vocabName: 'Now',
+      description: 'Digunakan untuk mengatakan pergi',
+      status: false,
+      tense: [
+        TenseModel(
+          tenseName: 'Simple Present Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Continous Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+      ],
+    ),
+    VocabModel(
+      vocabName: 'Now',
+      description: 'Digunakan untuk mengatakan pergi',
+      status: false,
+      tense: [
+        TenseModel(
+          tenseName: 'Simple Present Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Continous Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+      ],
+    ),
+    VocabModel(
+      vocabName: 'Now',
+      description: 'Digunakan untuk mengatakan pergi',
+      status: false,
+      tense: [
+        TenseModel(
+          tenseName: 'Simple Present Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Continous Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense',
+          rumus: 'S+V1',
+          contoh: 'I go',
+        ),
+      ],
+    ),
   ];
-
-  VocabModel({
-    required this.vocabName,
-    required this.description,
-    required this.status,
-    required this.tense,
-  });
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:vocab_daily/shared/shared.dart';
 
 part 'avatar_picker_event.dart';
 part 'avatar_picker_state.dart';
@@ -14,9 +15,11 @@ class AvatarPickerBloc extends Bloc<AvatarPickerEvent, AvatarPickerState> {
     AvatarPickerEvent event,
   ) async* {
     if (event is SetPicker) {
+      OnPicker onPicker = new OnPicker();
       print(event.path);
-      OnPicker.avatarPath = event.path;
-      yield OnPicker();
+
+      onPicker.avatarPath = event.path;
+      yield onPicker;
     }
   }
 }

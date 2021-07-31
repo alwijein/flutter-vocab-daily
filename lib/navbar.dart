@@ -53,6 +53,7 @@ class NavBar extends StatelessWidget {
     return [
       HomeScreen(),
       ListScreen(),
+      ListScreen(),
     ];
   }
 
@@ -67,6 +68,12 @@ class NavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.list_bullet),
         title: ("Daftar Vocab"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.settings),
+        title: ("Pengaturan"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

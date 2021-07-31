@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   height: getPropertionateScreenHeight(275),
                   child: ListView.builder(
-                      itemCount: VocabModel.vocabModel.length,
+                      itemCount: 2,
                       itemBuilder: (_, index) {
                         return VocabCard(
                           title: VocabModel.vocabModel[index].vocabName,
