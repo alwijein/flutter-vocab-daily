@@ -23,17 +23,15 @@ AppBarTheme appBarTheme() {
 }
 
 InputDecorationTheme inputDecorationTheme() {
-  OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(28),
-    borderSide: BorderSide(color: kTextColor),
-    gapPadding: 10.0,
-  );
+  // OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+  //   borderRadius: BorderRadius.circular(28),
+  //   borderSide: BorderSide(color: kTextColor),
+  //   gapPadding: 10.0,
+  // );
   return InputDecorationTheme(
     contentPadding: EdgeInsets.symmetric(
-      vertical: 20,
-      horizontal: 40,
+      vertical: 10,
+      horizontal: 10,
     ),
-    enabledBorder: outlineInputBorder,
-    focusedBorder: outlineInputBorder,
   );
 }
