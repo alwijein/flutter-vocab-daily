@@ -7,4 +7,4 @@ class PageInitial extends PageState {}
 
 class OnAvatarScreen extends PageState {}
 
-class OnHomeScreen extends PageState {}
+class OnNavbarScreen extends PageState {}

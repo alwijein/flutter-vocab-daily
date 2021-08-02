@@ -1,10 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
 import 'package:vocab_daily/config/size_config.dart';
 import 'package:vocab_daily/models/user_model.dart';
+import 'package:vocab_daily/navbar.dart';
 import 'package:vocab_daily/screens/avatar_screen/components/avatar_builder.dart';
 import 'package:vocab_daily/screens/avatar_screen/components/profile_filled_name.dart';
 import 'package:vocab_daily/shared/shared.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -44,8 +48,15 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text('selanjutnya'),
+                  onPressed: () {
+                    context.read<PageBloc>().add(GoToNavbarScreen());
+                  },
+                  child: Text(
+                    'Buka Vocab Daily',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),

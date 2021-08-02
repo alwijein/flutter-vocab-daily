@@ -34,7 +34,7 @@ class CardQuote extends StatelessWidget {
             ),
             SvgPicture.asset(
               'assets/icons/quote_head 1.svg',
-              height: getPropertionateScreenHeight(110),
+              height: getPropertionateScreenHeight(100),
             ),
           ],
         ),

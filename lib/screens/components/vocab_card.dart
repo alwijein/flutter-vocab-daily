@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/bloc/bookmarks_bloc/bookmarks_bloc.dart';
+import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/shared/shared.dart';
 import 'package:vocab_daily/config/size_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,14 +71,20 @@ class VocabCard extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: press,
-                  child: BlocBuilder<BookmarksBloc, BookmarksState>(
-                    builder: (context, state) {
-                      return Icon(state is BookmarksIsActive
-                          ? state.iconData
-                          : state is BookmarksIsNotActive
-                              ? state.iconData
-                              : Icons.bookmark_border_outlined);
-                    },
+                  child:
+                      // BlocBuilder<BookmarksBloc, BookmarksState>(
+                      //   builder: (context, state) {
+                      //     return Icon(state is BookmarksIsActive
+                      //         ? state.iconData
+                      //         : state is BookmarksIsNotActive
+                      //             ? state.iconData
+                      //             : Icons.bookmark_border_outlined);
+                      //   },
+                      // ),
+                      Icon(
+                    VocabModel.vocabModel[0].status == true
+                        ? Icons.bookmark_border
+                        : Icons.bookmark_border_outlined,
                   ),
                 ),
               ],

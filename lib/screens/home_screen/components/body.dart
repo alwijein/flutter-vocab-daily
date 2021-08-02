@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/bloc/bookmarks_bloc/bookmarks_bloc.dart';
+import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/screens/components/vocab_card.dart';
 import 'package:vocab_daily/screens/home_screen/components/card_quote.dart';
 import 'package:vocab_daily/screens/home_screen/components/headling_profile.dart';
@@ -28,37 +29,28 @@ class Body extends StatelessWidget {
                 SearchRounded(),
                 CardQuote(),
                 ReadMore(),
-                VocabCard(
-                  title: "Now : Sekarang",
-                  subTitle:
-                      "sekarang where are they now? mereka di \nmana sekarang?",
-                  press: () {
-                    if (_isBookmarks == true) {
-                      context.read<BookmarksBloc>().add(BookmarksActivated());
-                      _isBookmarks = !_isBookmarks;
-                    } else if (_isBookmarks == false) {
-                      context
-                          .read<BookmarksBloc>()
-                          .add(BookmarksNotActivated());
-                      _isBookmarks = !_isBookmarks;
-                    }
-                  },
-                ),
-                VocabCard(
-                  press: () {
-                    if (_isBookmarks == true) {
-                      context.read<BookmarksBloc>().add(BookmarksActivated());
-                      _isBookmarks = !_isBookmarks;
-                    } else if (_isBookmarks == false) {
-                      context
-                          .read<BookmarksBloc>()
-                          .add(BookmarksNotActivated());
-                      _isBookmarks = !_isBookmarks;
-                    }
-                  },
-                  title: "Time : Waktu",
-                  subTitle:
-                      "sekarang where are they now? mereka di \nmana sekarang?",
+                Container(
+                  width: SizeConfig.screenWidth,
+                  height: getPropertionateScreenHeight(275),
+                  child: ListView.builder(
+                      itemCount: VocabModel.vocabModel.length,
+                      itemBuilder: (_, index) {
+                        return VocabCard(
+                          title: VocabModel.vocabModel[index].vocabName,
+                          subTitle: VocabModel.vocabModel[index].description,
+                          press: () {
+                            if (_isBookmarks == true) {
+                              context.read<BookmarksBloc>().add(
+                                  BookmarksActivated(status: _isBookmarks));
+                              _isBookmarks = !_isBookmarks;
+                            } else if (_isBookmarks == false) {
+                              context.read<BookmarksBloc>().add(
+                                  BookmarksNotActivated(status: _isBookmarks));
+                              _isBookmarks = !_isBookmarks;
+                            }
+                          },
+                        );
+                      }),
                 ),
               ],
             ),

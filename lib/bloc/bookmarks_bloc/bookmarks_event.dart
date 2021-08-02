@@ -3,6 +3,14 @@ part of 'bookmarks_bloc.dart';
 @immutable
 abstract class BookmarksEvent {}
 
-class BookmarksActivated extends BookmarksEvent {}
+class BookmarksActivated extends BookmarksEvent {
+  bool status;
 
-class BookmarksNotActivated extends BookmarksEvent {}
+  BookmarksActivated({required this.status});
+}
+
+class BookmarksNotActivated extends BookmarksEvent {
+  bool status;
+
+  BookmarksNotActivated({required this.status});
+}

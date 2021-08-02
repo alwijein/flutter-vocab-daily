@@ -5,19 +5,6 @@ abstract class BookmarksState {}
 
 class BookmarksInitial extends BookmarksState {}
 
-class BookmarksIsActive extends BookmarksState {
-  final IconData iconData;
+class BookmarksIsActive extends BookmarksState {}
 
-  BookmarksIsActive({required this.iconData});
-  @override
-  List<Object> get props => [iconData];
-}
-
-class BookmarksIsNotActive extends BookmarksState {
-  final IconData iconData;
-
-  BookmarksIsNotActive({required this.iconData});
-
-  @override
-  List<Object> get props => [iconData];
-}
+class BookmarksIsNotActive extends BookmarksState {}

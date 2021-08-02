@@ -15,8 +15,8 @@ class PageBloc extends Bloc<PageEvent, PageState> {
   ) async* {
     if (event is GoToAvatarScreen) {
       yield OnAvatarScreen();
-    } else if (event is GoToHomeScreen) {
-      yield OnHomeScreen();
+    } else if (event is GoToNavbarScreen) {
+      yield OnNavbarScreen();
     }
   }
 }
