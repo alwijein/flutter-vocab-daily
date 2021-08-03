@@ -1,6 +1,4 @@
-import 'dart:math';
-import 'package:flutter/material.dart';
-
+part of 'utils.dart';
 // class for color random for vocab card
 
 class ColorRand {

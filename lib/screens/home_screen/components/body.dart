@@ -35,7 +35,10 @@ class Body extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: 2,
                       itemBuilder: (_, index) {
+                        VocabModel vocabModel = VocabModel.vocabModel[index];
+
                         return VocabCard(
+                          vocabModel: vocabModel,
                           title: VocabModel.vocabModel[index].vocabName,
                           subTitle: VocabModel.vocabModel[index].description,
                           press: () {

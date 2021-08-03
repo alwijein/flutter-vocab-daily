@@ -10,6 +10,9 @@ ThemeData theme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
+    iconTheme: IconThemeData(
+      color: kPrimaryColor,
+    ),
     color: kScaffoldColor,
     elevation: 0.0,
     brightness: Brightness.light,

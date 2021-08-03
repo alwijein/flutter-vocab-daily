@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
 import 'package:vocab_daily/navbar.dart';
-import 'package:vocab_daily/screens/avatar_screen/avatar_screen.dart';
-import 'package:vocab_daily/screens/home_screen/home_screen.dart';
+import 'package:vocab_daily/screens/profile_configuration/profile_configuration.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class _WrapperState extends State<Wrapper> {
     context.read<PageBloc>().add(GoToAvatarScreen());
     return BlocBuilder<PageBloc, PageState>(builder: (_, pageState) {
       return (pageState is OnAvatarScreen && isCheck == false)
-          ? AvatarScreen()
+          ? ProfileConfiguration()
           : NavBar();
     });
   }

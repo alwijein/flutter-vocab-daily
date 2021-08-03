@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vocab_daily/bloc/avatar_picker_bloc/avatar_picker_bloc.dart';
 import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
 import 'package:vocab_daily/config/size_config.dart';
-import 'package:vocab_daily/screens/avatar_screen/components/avatar_builder.dart';
-import 'package:vocab_daily/screens/avatar_screen/components/profile_filled_name.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vocab_daily/screens/profile_configuration/components/avatar_builder.dart';
+import 'package:vocab_daily/screens/profile_configuration/components/profile_filled_name.dart';
 import 'package:vocab_daily/shared/shared.dart';
 
 class Body extends StatefulWidget {

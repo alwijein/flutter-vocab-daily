@@ -29,11 +29,9 @@ class AvatarBuilder extends StatelessWidget {
                   horizontal: getPropertionateScreenWidht(20)),
               child: GestureDetector(
                 onTap: () {
-                  context.read<AvatarPickerBloc>().add(
-                        SetPicker(
-                          path: UserModel.avatar[index].namePath,
-                        ),
-                      );
+                  context.read<AvatarPickerBloc>().add(SetPicker(
+                        path: UserModel.avatar[index].namePath,
+                      ));
                   UserModel.avatar[index].namePath;
                 },
                 child: SvgPicture.asset(

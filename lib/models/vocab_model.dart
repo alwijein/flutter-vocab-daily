@@ -17,7 +17,8 @@ class VocabModel {
   static List<VocabModel> vocabModel = [
     VocabModel(
       vocabName: 'Go',
-      description: 'Digunakan untuk mengatakan pergi',
+      description:
+          'Digunakan untuk mengatakan pergi igunakan untuk mengatakan pergi pergi igunakan untuk mengatakan pergis',
       status: false,
       tense: [
         TenseModel(
@@ -26,13 +27,18 @@ class VocabModel {
           contoh: 'I go',
         ),
         TenseModel(
-          tenseName: 'Simple Present Continous Tense',
-          rumus: 'S+V1',
+          tenseName: 'Simple Present Continous Tense 0',
+          rumus: 'S+V2',
           contoh: 'I go',
         ),
         TenseModel(
-          tenseName: 'Simple Present Perfect Tense',
-          rumus: 'S+V1',
+          tenseName: 'Simple Present Perfect Tense 1',
+          rumus: 'S+V3',
+          contoh: 'I go',
+        ),
+        TenseModel(
+          tenseName: 'Simple Present Perfect Tense 2',
+          rumus: 'S+V3',
           contoh: 'I go',
         ),
       ],
