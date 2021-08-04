@@ -34,14 +34,20 @@ class RoundedFill extends StatelessWidget {
         ),
         child: isFilled == true
             ? TextField(
+                style: TextStyle(
+                  fontSize: getPropertionateScreenHeight(16),
+                ),
                 decoration: InputDecoration(
                   hintText: content,
+                  hintStyle: TextStyle(
+                    fontSize: getPropertionateScreenWidht(16),
+                  ),
                   border: InputBorder.none,
                 ),
               )
             : Text(
                 content,
-                style: TextStyle(fontSize: getPropertionateScreenWidht(18)),
+                style: TextStyle(fontSize: getPropertionateScreenWidht(16)),
               ),
       ),
     );
