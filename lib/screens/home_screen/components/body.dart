@@ -1,3 +1,4 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/bloc/bookmarks_bloc/bookmarks_bloc.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
@@ -14,7 +15,6 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool _isBookmarks = false;
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -35,22 +35,22 @@ class Body extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: 2,
                       itemBuilder: (_, index) {
-                        VocabModel vocabModel = VocabModel.vocabModel[index];
+                        VocabModel vocabModel = vocabModels[index];
 
                         return VocabCard(
                           vocabModel: vocabModel,
-                          title: VocabModel.vocabModel[index].vocabName,
-                          subTitle: VocabModel.vocabModel[index].description,
-                          press: () {
-                            if (_isBookmarks == true) {
-                              context.read<BookmarksBloc>().add(
-                                  BookmarksActivated(status: _isBookmarks));
-                              _isBookmarks = !_isBookmarks;
-                            } else if (_isBookmarks == false) {
-                              context.read<BookmarksBloc>().add(
-                                  BookmarksNotActivated(status: _isBookmarks));
-                              _isBookmarks = !_isBookmarks;
-                            }
+                          title: vocabModels[index].vocabName,
+                          subTitle: vocabModels[index].description,
+                          press: (bool value) {
+                            // vocabModels[index].status = value;
+
+                            // context.read<BookmarksBloc>().add(
+                            //     BookmarksActivated(
+                            //         status: value, count: index));
+
+                            print('state ' +
+                                vocabModels[index].vocabName +
+                                vocabModels[index].status.toString());
                           },
                         );
                       }),

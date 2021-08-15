@@ -18,9 +18,11 @@ class BookmarksBloc extends Bloc<BookmarksEvent, BookmarksState> {
   ) async* {
     if (event is BookmarksActivated) {
       print(event.status);
+      vocabModels[event.count].status = event.status;
       yield BookmarksIsActive();
     } else if (event is BookmarksNotActivated) {
       print(event.status);
+      vocabModels[event.count].status = event.status;
       yield BookmarksIsNotActive();
     }
   }

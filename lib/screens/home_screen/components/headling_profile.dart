@@ -4,23 +4,14 @@ import 'package:vocab_daily/shared/shared.dart';
 import 'package:vocab_daily/config/size_config.dart';
 
 class HeadlingProfile extends StatelessWidget {
-  Future<List<String>> getImgPath() async {
-    String pathImg = await GetSharedPreferences.getPathImg();
-    String username = await GetSharedPreferences.getUsername();
-
-    List<String> data = [
-      pathImg,
-      username,
-    ];
-    return data;
-  }
+  GetProfiles getProfiles = new GetProfiles();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: getPropertionateScreenHeight(10)),
       child: FutureBuilder<List<String>>(
-          future: getImgPath(),
+          future: getProfiles.getProfile(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               String img = snapshot.data![0];

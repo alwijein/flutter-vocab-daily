@@ -1,3 +1,4 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/screens/detail_screen/detail_screen.dart';
@@ -16,7 +17,8 @@ class VocabCard extends StatelessWidget {
 
   final VocabModel vocabModel;
   final String title, subTitle;
-  final Function() press;
+  final Function press;
+
   @override
   Widget build(BuildContext context) {
     ColorRand _colorRand = new ColorRand();
@@ -86,13 +88,9 @@ class VocabCard extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 1,
-                    child: GestureDetector(
-                      onTap: press,
-                      child: Icon(
-                        VocabModel.vocabModel[0].status == true
-                            ? Icons.bookmark_border
-                            : Icons.bookmark_border_outlined,
-                      ),
+                    child: FavoriteButton(
+                      valueChanged: press,
+                      iconSize: 35.0,
                     ),
                   ),
                 ],

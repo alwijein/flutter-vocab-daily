@@ -6,10 +6,18 @@ import 'package:vocab_daily/models/user_model.dart';
 import 'package:vocab_daily/shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AvatarBuilder extends StatelessWidget {
+class AvatarBuilder extends StatefulWidget {
   const AvatarBuilder({
     Key? key,
   }) : super(key: key);
+
+  @override
+  _AvatarBuilderState createState() => _AvatarBuilderState();
+}
+
+int itemsNumber = 5;
+
+class _AvatarBuilderState extends State<AvatarBuilder> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +29,7 @@ class AvatarBuilder extends StatelessWidget {
             crossAxisCount: 3,
             crossAxisSpacing: 0.5,
           ),
-          itemCount: UserModel.avatar.length,
+          itemCount: itemsNumber,
           itemBuilder: (_, index) {
             return Padding(
               padding: EdgeInsets.symmetric(

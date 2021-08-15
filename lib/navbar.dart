@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:vocab_daily/screens/home_screen/home_screen.dart';
 import 'package:vocab_daily/screens/list_screen/list_screen.dart';
+import 'package:vocab_daily/screens/setting_screens/setting_screen.dart';
 import 'package:vocab_daily/shared/shared.dart';
 
 class NavBar extends StatelessWidget {
@@ -53,7 +54,7 @@ class NavBar extends StatelessWidget {
     return [
       HomeScreen(),
       ListScreen(),
-      ListScreen(),
+      SettingScreen(),
     ];
   }
 

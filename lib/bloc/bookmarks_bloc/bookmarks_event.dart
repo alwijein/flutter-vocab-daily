@@ -5,12 +5,12 @@ abstract class BookmarksEvent {}
 
 class BookmarksActivated extends BookmarksEvent {
   bool status;
-
-  BookmarksActivated({required this.status});
+  int count;
+  BookmarksActivated({required this.status, required this.count});
 }
 
 class BookmarksNotActivated extends BookmarksEvent {
   bool status;
-
-  BookmarksNotActivated({required this.status});
+  int count;
+  BookmarksNotActivated({required this.status, required this.count});
 }

@@ -17,7 +17,9 @@ class Body extends StatefulWidget {
 
 TextEditingController textEditingController = new TextEditingController();
 
-class _BodyState extends State<Body> {
+class _BodyState extends State<Body> with WidgetsBindingObserver {
+
+
   @override
   Widget build(BuildContext context) {
     GetSharedPreferences sp = new GetSharedPreferences();

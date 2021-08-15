@@ -33,7 +33,10 @@ dependencies:
   google_fonts: ^2.1.0
   persistent_bottom_nav_bar: ^4.0.2
   shared_preferences: ^2.0.6
-
+  favorite_button: ^0.0.4
+  day_night_switcher: ^0.2.0+1
+  switcher_button: ^0.0.4
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -22,6 +22,15 @@ class UserModel {
     AvatarModel(
       namePath: 'assets/icons/avatar/girl-1.svg',
     ),
+    AvatarModel(
+      namePath: 'assets/icons/avatar/girl.svg',
+    ),
+    AvatarModel(
+      namePath: 'assets/icons/avatar/boy.svg',
+    ),
+    AvatarModel(
+      namePath: 'assets/icons/avatar/boy-1.svg',
+    ),
   ];
 
   UserModel({required this.name, required this.photoProfile});
