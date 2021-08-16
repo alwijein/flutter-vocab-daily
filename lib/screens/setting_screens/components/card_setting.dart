@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:switcher_button/switcher_button.dart';
 import 'package:vocab_daily/config/size_config.dart';
 import 'package:vocab_daily/shared/shared.dart';
@@ -23,7 +24,7 @@ class CardSetting extends StatelessWidget {
             padding: EdgeInsets.only(bottom: getPropertionateScreenHeight(18)),
             child: Container(
               width: double.infinity,
-              color: kSecondaryColorLight,
+              color: kAccentColor,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 child: Text(
@@ -50,15 +51,18 @@ class CardSetting extends StatelessWidget {
               Spacer(
                 flex: 20,
               ),
-              // Icon(Icons.arrow_right_outlined),
-              SwitcherButton(
-                onColor: kPrimaryColor,
-                offColor: kPrimaryLightColor,
-                value: isDarkMode,
-                onChange: (value) {
-                  isDarkMode = value;
-                },
-              )
+              SvgPicture.asset(
+                'assets/icons/back_arrow.svg',
+                color: kTextColor,
+              ),
+              // SwitcherButton(
+              //   onColor: kPrimaryColor,
+              //   offColor: kPrimaryLightColor,
+              //   value: isDarkMode,
+              //   onChange: (value) {
+              //     isDarkMode = value;
+              //   },
+              // )
             ],
           )
         ],

@@ -1,9 +1,9 @@
 part of 'utils.dart';
 
 class DotBuilder {
-  AnimatedContainer dotBuilder(int index, int currentPage) {
+  static AnimatedContainer dotBuilder(int index, int currentPage) {
     return AnimatedContainer(
-      duration: kAnimationDuration,
+      duration: Duration(milliseconds: 340),
       margin: EdgeInsets.only(right: 5),
       height: 6,
       width: currentPage == index ? 20 : 6,

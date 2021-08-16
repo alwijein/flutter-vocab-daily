@@ -49,7 +49,7 @@ class ProfileEdit extends StatelessWidget {
                       context.read<PageBloc>().add(GoToAvatarScreen());
                     },
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           'Edit Profile',
@@ -57,7 +57,10 @@ class ProfileEdit extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Icon(Icons.arrow_right_alt_outlined),
+                        SvgPicture.asset(
+                          'assets/icons/back_arrow.svg',
+                          color: Colors.white,
+                        ),
                       ],
                     ),
                   ),

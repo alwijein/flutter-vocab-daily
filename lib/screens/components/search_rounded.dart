@@ -15,7 +15,7 @@ class SearchRounded extends StatelessWidget {
         height: getPropertionateScreenHeight(55),
         width: SizeConfig.screenWidth,
         decoration: BoxDecoration(
-          color: kSecondaryColorLight,
+          color: kAccentColor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(

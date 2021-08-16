@@ -5,6 +5,7 @@ import 'package:vocab_daily/config/size_config.dart';
 import 'package:vocab_daily/models/user_model.dart';
 import 'package:vocab_daily/shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vocab_daily/utils/utils.dart';
 
 class AvatarBuilder extends StatefulWidget {
   const AvatarBuilder({
@@ -15,7 +16,7 @@ class AvatarBuilder extends StatefulWidget {
   _AvatarBuilderState createState() => _AvatarBuilderState();
 }
 
-int itemsNumber = 5;
+int currentPage = 0;
 
 class _AvatarBuilderState extends State<AvatarBuilder> {
   @override
@@ -29,7 +30,7 @@ class _AvatarBuilderState extends State<AvatarBuilder> {
             crossAxisCount: 3,
             crossAxisSpacing: 0.5,
           ),
-          itemCount: itemsNumber,
+          itemCount: 6,
           itemBuilder: (_, index) {
             return Padding(
               padding: EdgeInsets.symmetric(
@@ -56,18 +57,30 @@ class _AvatarBuilderState extends State<AvatarBuilder> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: getPropertionateScreenWidht(10),
-                height: getPropertionateScreenHeight(10),
-                decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                  shape: BoxShape.circle,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  2,
+                  (index) => dotBuilder(index),
                 ),
               ),
             ],
           ),
         )
       ],
+    );
+  }
+
+  AnimatedContainer dotBuilder(int index) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 350),
+      margin: EdgeInsets.only(right: 5),
+      height: 6,
+      width: currentPage == index ? 20 : 6,
+      decoration: BoxDecoration(
+        color: currentPage == index ? kPrimaryColor : kSecondaryColor,
+        borderRadius: BorderRadius.circular(3),
+      ),
     );
   }
 }

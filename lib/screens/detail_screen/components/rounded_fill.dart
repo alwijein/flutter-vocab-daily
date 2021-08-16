@@ -29,7 +29,7 @@ class RoundedFill extends StatelessWidget {
             ? getPropertionateScreenHeight(200)
             : getPropertionateScreenHeight(50),
         decoration: BoxDecoration(
-          color: kSecondaryColorLight,
+          color: kAccentColor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: isFilled == true
