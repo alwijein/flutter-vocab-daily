@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
 import 'package:vocab_daily/config/size_config.dart';
+import 'package:vocab_daily/services/connection_services.dart';
 import 'package:vocab_daily/shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,6 +46,7 @@ class ProfileEdit extends StatelessWidget {
                   width: getPropertionateScreenWidht(170),
                   child: ElevatedButton(
                     onPressed: () {
+
                       GetSharedPreferences.firstOpen(false);
                       context.read<PageBloc>().add(GoToAvatarScreen());
                     },
