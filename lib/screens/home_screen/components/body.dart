@@ -1,6 +1,4 @@
-import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
-import 'package:vocab_daily/bloc/bookmarks_bloc/bookmarks_bloc.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/screens/components/search_rounded.dart';
 import 'package:vocab_daily/screens/components/vocab_card.dart';
@@ -8,11 +6,10 @@ import 'package:vocab_daily/screens/home_screen/components/card_quote.dart';
 import 'package:vocab_daily/screens/home_screen/components/headling_profile.dart';
 import 'package:vocab_daily/screens/home_screen/components/read_more.dart';
 import 'package:vocab_daily/config/size_config.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vocab_daily/services/connection_services.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,10 +30,10 @@ class Body extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   height: getPropertionateScreenHeight(275),
                   child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(parent: ScrollPhysics()),
                       itemCount: 2,
                       itemBuilder: (_, index) {
                         VocabModel vocabModel = vocabModels[index];
-
                         return VocabCard(
                           vocabModel: vocabModel,
                           title: vocabModels[index].vocabName,
@@ -55,6 +52,9 @@ class Body extends StatelessWidget {
                         );
                       }),
                 ),
+                ElevatedButton(onPressed: (){
+                  ConnectionServices.getHttp();
+                }, child: Text("Naruto"),),
               ],
             ),
           ),
