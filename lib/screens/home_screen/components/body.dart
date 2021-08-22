@@ -6,12 +6,14 @@ import 'package:vocab_daily/screens/home_screen/components/card_quote.dart';
 import 'package:vocab_daily/screens/home_screen/components/headling_profile.dart';
 import 'package:vocab_daily/screens/home_screen/components/read_more.dart';
 import 'package:vocab_daily/config/size_config.dart';
-import 'package:vocab_daily/services/connection_services.dart';
+import 'package:vocab_daily/services/services.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    ConnectionServices connectionServices = new ConnectionServices();
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -30,7 +32,8 @@ class Body extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   height: getPropertionateScreenHeight(275),
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(parent: ScrollPhysics()),
+                      physics:
+                          NeverScrollableScrollPhysics(parent: ScrollPhysics()),
                       itemCount: 2,
                       itemBuilder: (_, index) {
                         VocabModel vocabModel = vocabModels[index];
@@ -52,9 +55,12 @@ class Body extends StatelessWidget {
                         );
                       }),
                 ),
-                ElevatedButton(onPressed: (){
-                  ConnectionServices.getHttp();
-                }, child: Text("Naruto"),),
+                ElevatedButton(
+                  onPressed: () {
+                    connectionServices.getKatakerja();
+                  },
+                  child: Text("Naruto"),
+                ),
               ],
             ),
           ),

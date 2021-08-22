@@ -1,39 +1,68 @@
-import 'package:dio/dio.dart';
+part of 'services.dart';
 
 class ConnectionServices {
-  static void getHttp() async {
+  static List<ApiRoot> apiRoot = [];
+
+  void getApiRoot() async {
     try {
-      var response = await Dio().get('http://buthu.me:8001/api/katakerja');
+      var response = await Dio().get('http://buthu.me:8001/api/');
 
-      List<DataModelDemo> dataModelDemo = [];
+      print(response.data['katakerja']);
 
-      for (var data in response.data) {
-        dataModelDemo.add(
-          DataModelDemo(
-              kataDasar: data['kata_dasar'],
-              v1: data['v1'],
-              v2: data['v2'],
-              v3: data['v3'],
-              arti: data['arti']),
-        );
-      }
-
-      // print(dataModelDemo[0].arti);
-      // print(dataModelDemo);
-
+      apiRoot.add(
+        ApiRoot(
+          kataKerja: response.data['katakerja'],
+          petunjuk: response.data['petunjuk'],
+          vocabDaily: response.data['vocabdaily'],
+        ),
+      );
     } catch (e) {
       print(e);
     }
   }
+
+  void getKatakerja() async {
+    getApiRoot();
+    try {
+      var urlKey = await Dio().get(apiRoot[0].kataKerja);
+      print(apiRoot[0].kataKerja);
+
+      List<VocabDemo> vd = [];
+
+      for (var data in urlKey.data) {
+        VocabDemo(
+            kataDasar: data['kata_dasar'],
+            v1: data['v1'],
+            v2: data['v2'],
+            v3: data['v3'],
+            arti: data['arti']);
+      }
+
+      print("succes: " + vd[0].arti);
+    } catch (e) {
+      print("Erro: $e");
+    }
+  }
 }
 
-class DataModelDemo {
+class ApiRoot {
+  String kataKerja, petunjuk, vocabDaily;
+
+  ApiRoot({
+    required this.kataKerja,
+    required this.petunjuk,
+    required this.vocabDaily,
+  });
+}
+
+class VocabDemo {
   String kataDasar, v1, v2, v3, arti;
 
-  DataModelDemo(
-      {required this.kataDasar,
-      required this.v1,
-      required this.v2,
-      required this.v3,
-      required this.arti});
+  VocabDemo({
+    required this.kataDasar,
+    required this.v1,
+    required this.v2,
+    required this.v3,
+    required this.arti,
+  });
 }
