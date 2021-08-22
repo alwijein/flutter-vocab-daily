@@ -35,7 +35,6 @@ class Body extends StatelessWidget {
                       future: connectionServices.getApiRoot(),
                       builder: (_, snapshoot) {
                         if (snapshoot.hasData) {
-                          print('data' + snapshoot.data.toString());
                           return ListView.builder(
                               physics: NeverScrollableScrollPhysics(
                                 parent: ScrollPhysics(),
@@ -46,7 +45,7 @@ class Body extends StatelessWidget {
                                 return VocabCard(
                                   vocabModel: vocabModel,
                                   title: vocabModel.vocabName,
-                                  subTitle: vocabModel.arti,
+                                  subTitle: vocabModel.vocabName,
                                   press: () {},
                                 );
                               });
