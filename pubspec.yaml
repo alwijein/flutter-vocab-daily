@@ -37,7 +37,8 @@ dependencies:
   day_night_switcher: ^0.2.0+1
   switcher_button: ^0.0.4
   dio: ^4.0.0
-  
+  faker: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

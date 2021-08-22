@@ -1,68 +1,166 @@
 part of 'services.dart';
 
 class ConnectionServices {
-  static List<ApiRoot> apiRoot = [];
-
-  void getApiRoot() async {
-    try {
-      var response = await Dio().get('http://buthu.me:8001/api/');
-
-      print(response.data['katakerja']);
-
-      apiRoot.add(
-        ApiRoot(
-          kataKerja: response.data['katakerja'],
-          petunjuk: response.data['petunjuk'],
-          vocabDaily: response.data['vocabdaily'],
-        ),
-      );
-    } catch (e) {
-      print(e);
-    }
+  Future<List<VocabModel>> getApiRoot() async {
+    var response = await Dio().get('http://buthu.me:8001/api/katakerja/');
+    return VocabModel.vocabModel(response.data);
   }
 
-  void getKatakerja() async {
-    getApiRoot();
-    try {
-      var urlKey = await Dio().get(apiRoot[0].kataKerja);
-      print(apiRoot[0].kataKerja);
+  // Future<List<VocabModel>> getKatakerja() async {
+  //   var response = await Dio().get('http://buthu.me:8001/api/katakerja/');
 
-      List<VocabDemo> vd = [];
+  //   return VocabModel.vocabModel(response.data);
+  // }
 
-      for (var data in urlKey.data) {
-        VocabDemo(
-            kataDasar: data['kata_dasar'],
-            v1: data['v1'],
-            v2: data['v2'],
-            v3: data['v3'],
-            arti: data['arti']);
-      }
+  void generatedVocab() async {
+    var faker = new Faker();
 
-      print("succes: " + vd[0].arti);
-    } catch (e) {
-      print("Erro: $e");
+    for (int i = 0; i < 10; i++) {
+      var formData = FormData.fromMap({
+        'nama_tenses': faker.lorem.word(),
+        'keterangan': faker.lorem.sentence(),
+        'contoh': faker.lorem.sentence(),
+      });
+      var response = await Dio()
+          .post('http://buthu.me:8001/api/petunjuk/', data: formData);
     }
   }
-}
-
-class ApiRoot {
-  String kataKerja, petunjuk, vocabDaily;
-
-  ApiRoot({
-    required this.kataKerja,
-    required this.petunjuk,
-    required this.vocabDaily,
-  });
 }
 
 class VocabDemo {
-  String kataDasar, v1, v2, v3, arti;
+  String namaTenses, keterangan, contoh;
 
   VocabDemo({
-    required this.kataDasar,
+    required this.namaTenses,
+    required this.keterangan,
+    required this.contoh,
+  });
+
+  static List<VocabDemo> vocabDemo(List data) {
+    List<VocabDemo> vocabDemo = [];
+
+    for (var item in data) {
+      vocabDemo.add(
+        VocabDemo(
+          namaTenses: item['nama_tenses'],
+          keterangan: item['keterangan'],
+          contoh: item['contoh'],
+        ),
+      );
+    }
+    return vocabDemo;
+  }
+}
+
+class VocabModel {
+  String id, vocabName, v1, v2, v3, arti;
+
+  List<TenseModel> tense = [];
+  VocabModel({
+    required this.id,
+    required this.vocabName,
     required this.v1,
     required this.v2,
     required this.v3,
     required this.arti,
+    // required this.tense,
   });
+
+  static List<VocabModel> vocabModel(List data) {
+    List<VocabModel> vocabModel = [];
+
+    List<Map<String, String>> nameTenses = [
+      {
+        'tense_name': 'Simple present tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple present tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple present continues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple present perfect tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple present perfect continues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past continous tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past perfect tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past perfect continoues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple future tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple future continoues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past future tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past future continoues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+      {
+        'tense_name': 'Simple past future perfect continoues tense',
+        'rumus': 'S+V1',
+        'contoh': 'I go',
+      },
+    ];
+    for (var item in data) {
+      // List<TenseModel> tempt = [];
+      // for (Map item2 in nameTenses) {
+      //   tempt.add(TenseModel(
+      //       tenseName: item2['tense_name'],
+      //       rumus: item2['rumus'],
+      //       contoh: item2['contoh']));
+      // }
+      vocabModel.add(
+        VocabModel(
+          id: item['id'],
+          vocabName: item['kata_dasar'],
+          v1: item['v1'],
+          v2: item['v2'],
+          v3: item['v3'],
+          arti: item['arti'],
+          // tense: tempt,
+        ),
+      );
+    }
+    return vocabModel;
+  }
 }

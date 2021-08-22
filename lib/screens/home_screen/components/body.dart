@@ -31,35 +31,28 @@ class Body extends StatelessWidget {
                 Container(
                   width: SizeConfig.screenWidth,
                   height: getPropertionateScreenHeight(275),
-                  child: ListView.builder(
-                      physics:
-                          NeverScrollableScrollPhysics(parent: ScrollPhysics()),
-                      itemCount: 2,
-                      itemBuilder: (_, index) {
-                        VocabModel vocabModel = vocabModels[index];
-                        return VocabCard(
-                          vocabModel: vocabModel,
-                          title: vocabModels[index].vocabName,
-                          subTitle: vocabModels[index].description,
-                          press: (bool value) {
-                            // vocabModels[index].status = value;
-
-                            // context.read<BookmarksBloc>().add(
-                            //     BookmarksActivated(
-                            //         status: value, count: index));
-
-                            print('state ' +
-                                vocabModels[index].vocabName +
-                                vocabModels[index].status.toString());
-                          },
-                        );
+                  child: FutureBuilder<List<VocabModel>>(
+                      future: connectionServices.getApiRoot(),
+                      builder: (_, snapshoot) {
+                        if (snapshoot.hasData) {
+                          print('data' + snapshoot.data.toString());
+                          return ListView.builder(
+                              physics: NeverScrollableScrollPhysics(
+                                parent: ScrollPhysics(),
+                              ),
+                              itemCount: 2,
+                              itemBuilder: (_, index) {
+                                VocabModel vocabModel = snapshoot.data![index];
+                                return VocabCard(
+                                  vocabModel: vocabModel,
+                                  title: vocabModel.vocabName,
+                                  subTitle: vocabModel.arti,
+                                  press: () {},
+                                );
+                              });
+                        }
+                        return CircularProgressIndicator();
                       }),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    connectionServices.getKatakerja();
-                  },
-                  child: Text("Naruto"),
                 ),
               ],
             ),
