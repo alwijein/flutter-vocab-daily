@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
                   return VocabCard(
                     vocabModel: vocabModel,
                     title: vocabModel.vocabName,
-                    subTitle: vocabModel.vocabName,
+                    subTitle: vocabModel.arti,
                     press: () {},
                   );
                 },

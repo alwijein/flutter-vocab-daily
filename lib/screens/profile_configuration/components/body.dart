@@ -18,8 +18,6 @@ class Body extends StatefulWidget {
 TextEditingController textEditingController = new TextEditingController();
 
 class _BodyState extends State<Body> with WidgetsBindingObserver {
-
-
   @override
   Widget build(BuildContext context) {
     GetSharedPreferences sp = new GetSharedPreferences();
@@ -60,6 +58,14 @@ class _BodyState extends State<Body> with WidgetsBindingObserver {
                 BlocBuilder<AvatarPickerBloc, AvatarPickerState>(
                   builder: (context, state) {
                     return ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: kPrimaryColor,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 70,
+                            vertical: 10,
+                          ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15))),
                       onPressed: () {
                         if (state is OnPicker) {
                           print(textEditingController.text);
@@ -74,6 +80,7 @@ class _BodyState extends State<Body> with WidgetsBindingObserver {
                         'Buka Vocab Daily',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontSize: getPropertionateScreenWidht(18),
                         ),
                       ),
                     );
