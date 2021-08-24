@@ -33,13 +33,13 @@ class Body extends StatelessWidget {
                 },
               );
             }
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircularProgressIndicator(),
-                Text("Loading.."),
-              ],
+            return Center(
+              child: Column(
+                children: [
+                  CircularProgressIndicator(),
+                  Text("Loading.."),
+                ],
+              ),
             );
           },
         ),

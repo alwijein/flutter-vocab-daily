@@ -85,7 +85,16 @@ class _BodyState extends State<Body> {
                       );
                     });
               }
-              return CircularProgressIndicator();
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  SizedBox(
+                    height: getPropertionateScreenHeight(10),
+                  ),
+                  Text('Loading..'),
+                ],
+              );
             },
           ),
         ),

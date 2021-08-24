@@ -37,65 +37,61 @@ class VocabCard extends StatelessWidget {
             }),
           );
         },
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                left: BorderSide(
-                  color: _colorRand.randColor,
-                  width: getPropertionateScreenWidht(13),
-                ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(
+                stops: [0.03, 0.03],
+                colors: [_colorRand.randColor, Colors.white]),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.1),
+                spreadRadius: 3,
+                blurRadius: 7,
+                offset: Offset(0, 3), // changes position of shadow
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 50,
-                  spreadRadius: 2,
+            ],
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: getPropertionateScreenHeight(20),
+              horizontal: getPropertionateScreenWidht(20),
+            ),
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          color: kTextColor,
+                          fontSize: getPropertionateScreenWidht(18),
+                        ),
+                      ),
+                      Text(
+                        subTitle,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        style: TextStyle(
+                          color: kSecondaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: FavoriteButton(
+                    valueChanged: press,
+                    iconSize: 40.0,
+                  ),
                 ),
               ],
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: getPropertionateScreenHeight(20),
-                horizontal: getPropertionateScreenWidht(10),
-              ),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          title,
-                          style: TextStyle(
-                            color: kTextColor,
-                            fontSize: getPropertionateScreenWidht(18),
-                          ),
-                        ),
-                        Text(
-                          subTitle,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: TextStyle(
-                            color: kSecondaryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: FavoriteButton(
-                      valueChanged: press,
-                      iconSize: 35.0,
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ),

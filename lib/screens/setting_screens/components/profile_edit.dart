@@ -44,6 +44,16 @@ class ProfileEdit extends StatelessWidget {
                 Container(
                   width: getPropertionateScreenWidht(170),
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: kPrimaryColor,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 10,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
                     onPressed: () {
                       GetSharedPreferences.firstOpen(false);
                       context.read<PageBloc>().add(GoToAvatarScreen());
