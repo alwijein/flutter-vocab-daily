@@ -12,31 +12,44 @@ class ShimmerVocabCard extends StatelessWidget {
         bottom: getPropertionateScreenHeight(23),
       ),
       child: Shimmer(
-        duration: Duration(seconds: 1), 
+        duration: Duration(seconds: 3),
         interval: Duration(seconds: 1),
         color: Colors.white,
-        colorOpacity: 0, 
         enabled: true, //Default value
         direction: ShimmerDirection.fromLTRB(),
         child: Container(
-          height: 70,
-          
           decoration: BoxDecoration(
             color: Colors.grey.shade300,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 3,
-                blurRadius: 7,
-                offset: Offset(0, 3), // changes position of shadow
-              ),
-            ],
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(
               vertical: getPropertionateScreenHeight(20),
               horizontal: getPropertionateScreenWidht(20),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: getPropertionateScreenWidht(250),
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                SizedBox(
+                  height: getPropertionateScreenHeight(10),
+                ),
+                Container(
+                  width: getPropertionateScreenWidht(200),
+                  height: 15,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

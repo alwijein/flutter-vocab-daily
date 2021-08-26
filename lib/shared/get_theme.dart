@@ -17,11 +17,11 @@ AppBarTheme appBarTheme() {
     elevation: 0.0,
     brightness: Brightness.light,
     textTheme: TextTheme(
-      headline6: TextStyle(
-        color: kSecondaryColor,
-        fontSize: 18,
-      ),
-    ),
+        headline6: TextStyle(
+          color: kSecondaryColor,
+          fontSize: 18,
+        ),
+        caption: TextStyle(color: Colors.red)),
   );
 }
 
