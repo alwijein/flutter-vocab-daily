@@ -38,6 +38,7 @@ dependencies:
   switcher_button: ^0.0.4
   dio: ^4.0.0
   faker: ^2.0.0
+  shimmer_animation: ^2.1.0+1
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/screens/components/search_rounded.dart';
+import 'package:vocab_daily/screens/components/shimmer_vocab_card.dart';
 import 'package:vocab_daily/screens/components/vocab_card.dart';
 import 'package:vocab_daily/screens/home_screen/components/card_quote.dart';
 import 'package:vocab_daily/screens/home_screen/components/headling_profile.dart';
@@ -50,7 +51,15 @@ class Body extends StatelessWidget {
                                 );
                               });
                         }
-                        return CircularProgressIndicator();
+                        return ListView(
+                          physics: NeverScrollableScrollPhysics(
+                            parent: ScrollPhysics(),
+                          ),
+                          children: [
+                            ShimmerVocabCard(),
+                            ShimmerVocabCard(),
+                          ],
+                        );
                       }),
                 ),
               ],
