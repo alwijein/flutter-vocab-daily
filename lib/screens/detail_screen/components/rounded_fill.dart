@@ -19,36 +19,40 @@ class RoundedFill extends StatelessWidget {
         horizontal: getPropertionateScreenWidht(20),
         vertical: getPropertionateScreenHeight(8),
       ),
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: getPropertionateScreenWidht(20),
-          vertical: getPropertionateScreenHeight(10),
-        ),
-        width: double.infinity,
-        height: isFilled == true
-            ? getPropertionateScreenHeight(200)
-            : getPropertionateScreenHeight(50),
-        decoration: BoxDecoration(
-          color: kAccentColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: isFilled == true
-            ? TextField(
-                style: TextStyle(
-                  fontSize: getPropertionateScreenHeight(16),
-                ),
-                decoration: InputDecoration(
-                  hintText: content,
-                  hintStyle: TextStyle(
-                    fontSize: getPropertionateScreenWidht(16),
+      child: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: getPropertionateScreenWidht(20),
+              vertical: getPropertionateScreenHeight(10),
+            ),
+            width: double.infinity,
+            height: isFilled == true
+                ? getPropertionateScreenHeight(200)
+                : getPropertionateScreenHeight(50),
+            decoration: BoxDecoration(
+              color: kAccentColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: isFilled == true
+                ? TextField(
+                    style: TextStyle(
+                      fontSize: getPropertionateScreenHeight(16),
+                    ),
+                    decoration: InputDecoration(
+                      hintText: content,
+                      hintStyle: TextStyle(
+                        fontSize: getPropertionateScreenWidht(16),
+                      ),
+                      border: InputBorder.none,
+                    ),
+                  )
+                : Text(
+                    content,
+                    style: TextStyle(fontSize: getPropertionateScreenWidht(16)),
                   ),
-                  border: InputBorder.none,
-                ),
-              )
-            : Text(
-                content,
-                style: TextStyle(fontSize: getPropertionateScreenWidht(16)),
-              ),
+          ),
+        ],
       ),
     );
   }

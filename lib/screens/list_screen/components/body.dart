@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/config/size_config.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
-import 'package:vocab_daily/screens/components/shimmer_vocab_card.dart';
+import 'package:vocab_daily/screens/components/shimmer_search_card.dart';
+import 'package:vocab_daily/screens/components/shimmer_vocab_card%20copy.dart';
 import 'package:vocab_daily/screens/components/vocab_card.dart';
 import 'package:vocab_daily/services/services.dart';
 
@@ -39,6 +40,15 @@ class Body extends StatelessWidget {
                 parent: ScrollPhysics(),
               ),
               children: [
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
+                ShimmerVocabCard(),
                 ShimmerVocabCard(),
                 ShimmerVocabCard(),
                 ShimmerVocabCard(),

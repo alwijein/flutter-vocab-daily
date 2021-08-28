@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vocab_daily/bloc/avatar_picker_bloc/avatar_picker_bloc.dart';
 import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
-import 'package:vocab_daily/screens/components/shimmer_vocab_card.dart';
+import 'package:vocab_daily/screens/components/shimmer_search_card.dart';
 import 'package:vocab_daily/screens/wrapper/wrapper.dart';
 import 'package:vocab_daily/shared/shared.dart';
 

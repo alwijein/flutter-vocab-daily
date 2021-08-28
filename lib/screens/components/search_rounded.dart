@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:search_page/search_page.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
+import 'package:vocab_daily/screens/components/shimmer_search_card.dart';
 import 'package:vocab_daily/screens/components/vocab_card.dart';
 import 'package:vocab_daily/services/services.dart';
 import 'package:vocab_daily/shared/shared.dart';
@@ -92,7 +93,7 @@ class SearchRounded extends StatelessWidget {
                 ),
               );
             }
-            return CircularProgressIndicator();
+            return ShimmerSearchCard();
           }),
     );
   }

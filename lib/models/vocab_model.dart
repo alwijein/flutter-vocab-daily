@@ -35,63 +35,63 @@ class VocabModel {
       },
       {
         'tense_name': 'Simple present perfect continues tense',
+        'rumus': 'S + have/has + been + V1 ing',
+        'contoh': 'I have been going',
+      },
+      {
+        'tense_name': 'Simple past tense',
         'rumus': 'S + V2',
         'contoh': 'I went',
       },
       {
-        'tense_name': 'Simple past tense',
-        'rumus': 'S + was/were + V1 ing',
-        'contoh': 'I was going',
+        'tense_name': 'Simple past continous tense',
+        'rumus': 'S + was/were + been + V1 ing',
+        'contoh': 'I was been going',
       },
       {
-        'tense_name': 'Simple past continous tense',
+        'tense_name': 'Simple past perfect tense',
         'rumus': 'S + had + V3',
         'contoh': 'I had gone',
       },
       {
-        'tense_name': 'Simple past perfect tense',
-        'rumus': 'S + had + been +V1 ing',
+        'tense_name': 'Simple past perfect continoues tense',
+        'rumus': 'S + had + been + V1 ing',
         'contoh': 'I had been going',
       },
       {
-        'tense_name': 'Simple past perfect continoues tense',
+        'tense_name': 'Simple future tense',
         'rumus': 'S + will + V1',
         'contoh': 'I will go',
       },
       {
-        'tense_name': 'Simple future tense',
+        'tense_name': 'Simple future continoues tense',
         'rumus': 'S + will + be + V1 ing',
         'contoh': 'I will be going',
       },
       {
-        'tense_name': 'Simple future continoues tense',
+        'tense_name': 'Simple future perfect tense',
         'rumus': 'S + will + have + V3',
         'contoh': 'I will have gone',
       },
       {
-        'tense_name': 'Simple future perfect tense',
-        'rumus': '',
-        'contoh': '',
-      },
-      {
         'tense_name': 'Simple past future tense',
-        'rumus': 'S + will + have + been + V1 ing',
-        'contoh': 'I will have been going',
-      },
-      {
-        'tense_name': 'Simple past future continoues tense',
         'rumus': 'S + would + V1',
         'contoh': 'I would go',
       },
       {
+        'tense_name': 'Simple past future continoues tense',
+        'rumus': 'S + would + be + V1 ing',
+        'contoh': 'I would be going',
+      },
+      {
         'tense_name': 'Simple past future perfect tense',
-        'rumus': '',
-        'contoh': '',
+        'rumus': 'S + would + have + V3',
+        'contoh': 'I would have gone',
       },
       {
         'tense_name': 'Simple past future perfect continoues tense',
-        'rumus': 'S + would + be + V1 ing',
-        'contoh': 'I would be going',
+        'rumus': 'S + would + have + V1 ing',
+        'contoh': 'I would have going',
       },
     ];
     for (var item in data) {
