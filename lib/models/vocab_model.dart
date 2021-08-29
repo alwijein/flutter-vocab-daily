@@ -1,7 +1,8 @@
 import 'package:vocab_daily/models/tense_model.dart';
 
 class VocabModel {
-  String id, vocabName, v1, v2, v3, arti;
+  int id;
+  String vocabName, v1, v2, v3, arti;
 
   List<TenseModel> tense = [];
   VocabModel({
@@ -104,7 +105,7 @@ class VocabModel {
       }
       vocabModel.add(
         VocabModel(
-          id: item['id'].toString(),
+          id: item['id'],
           vocabName: item['kata_dasar'],
           v1: item['v1'],
           v2: item['v2'],

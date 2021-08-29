@@ -75,6 +75,7 @@ class _BodyState extends State<Body> {
                               RoundedFill(
                                 content: 'Ketuk untuk memasukkan teks',
                                 isFilled: true,
+                                idVocab: vb.id,
                               ),
                               SizedBox(
                                 height: getPropertionateScreenHeight(10),

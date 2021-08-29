@@ -24,29 +24,13 @@ class ConnectionServices {
           .post('http://buthu.me:8001/api/katakerja/', data: formData);
     }
   }
+
+  void sendVocabTest(String kalimat, int idv) async {
+    var formData = FormData.fromMap({
+      'kalimat': kalimat,
+      'kata_kerja_id': idv,
+    });
+    var response = await Dio()
+        .post('http://buthu.me:8001/api/vocabdaily/', data: formData);
+  }
 }
-
-// class VocabDemo {
-//   String namaTenses, keterangan, contoh;
-
-//   VocabDemo({
-//     required this.namaTenses,
-//     required this.keterangan,
-//     required this.contoh,
-//   });
-
-//   static List<VocabDemo> vocabDemo(List data) {
-//     List<VocabDemo> vocabDemo = [];
-
-//     for (var item in data) {
-//       vocabDemo.add(
-//         VocabDemo(
-//           namaTenses: item['nama_tenses'],
-//           keterangan: item['keterangan'],
-//           contoh: item['contoh'],
-//         ),
-//       );
-//     }
-//     return vocabDemo;
-//   }
-// }

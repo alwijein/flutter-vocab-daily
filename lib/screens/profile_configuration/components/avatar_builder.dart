@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vocab_daily/bloc/avatar_picker_bloc/avatar_picker_bloc.dart';
 import 'package:vocab_daily/config/size_config.dart';
-import 'package:vocab_daily/models/user_model.dart';
+import 'package:vocab_daily/screens/profile_configuration/components/GridViewAvatar1.dart';
+import 'package:vocab_daily/screens/profile_configuration/components/GridViewAvatar2.dart';
 import 'package:vocab_daily/shared/shared.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vocab_daily/utils/utils.dart';
 
 class AvatarBuilder extends StatefulWidget {
   const AvatarBuilder({
@@ -21,34 +18,26 @@ int currentPage = 0;
 class _AvatarBuilderState extends State<AvatarBuilder> {
   @override
   Widget build(BuildContext context) {
+    List<Widget> test = [
+      GridViewAvatar1(),
+      GridViewAvatar2(),
+    ];
     return Column(
       children: [
-        GridView.builder(
-          shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 0.5,
-            crossAxisCount: 3,
-            crossAxisSpacing: 0.5,
+        Container(
+          width: getPropertionateScreenWidht(400),
+          height: getPropertionateScreenHeight(290),
+          child: PageView.builder(
+            itemCount: 2,
+            itemBuilder: (_, index) {
+              return test[index];
+            },
+            onPageChanged: (value) {
+              setState(() {
+                currentPage = value;
+              });
+            },
           ),
-          itemCount: 6,
-          itemBuilder: (_, index) {
-            return Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: getPropertionateScreenWidht(10),
-                  horizontal: getPropertionateScreenWidht(20)),
-              child: GestureDetector(
-                onTap: () {
-                  context.read<AvatarPickerBloc>().add(SetPicker(
-                        path: UserModel.avatar[index].namePath,
-                      ));
-                  UserModel.avatar[index].namePath;
-                },
-                child: SvgPicture.asset(
-                  UserModel.avatar[index].namePath,
-                ),
-              ),
-            );
-          },
         ),
         Padding(
           padding: EdgeInsets.symmetric(
@@ -66,7 +55,7 @@ class _AvatarBuilderState extends State<AvatarBuilder> {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
