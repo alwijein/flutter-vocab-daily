@@ -26,11 +26,30 @@ class ConnectionServices {
   }
 
   void sendVocabTest(String kalimat, int idv) async {
-    var formData = FormData.fromMap({
-      'kalimat': kalimat,
-      'kata_kerja_id': idv,
-    });
-    var response = await Dio()
-        .post('http://buthu.me:8001/api/vocabdaily/', data: formData);
+    try {
+      var formData = FormData.fromMap({
+        'kalimat': kalimat,
+        'kata_kerja_id': idv,
+      });
+      var response = await Dio()
+          .post('http://buthu.me:8001/api/vocabdaily/', data: formData);
+      Fluttertoast.showToast(
+          msg: "Input Berhasil",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: kPrimaryColor,
+          textColor: Colors.white,
+          fontSize: 16.0);
+    } catch (e) {
+      Fluttertoast.showToast(
+          msg: "Something Wrong: $e",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: kPrimaryColor,
+          textColor: Colors.white,
+          fontSize: 16.0);
+    }
   }
 }
