@@ -36,7 +36,7 @@ class ConnectionServices {
       Fluttertoast.showToast(
           msg: "Input Berhasil",
           toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.CENTER,
+          gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
           backgroundColor: kPrimaryColor,
           textColor: Colors.white,
@@ -45,7 +45,7 @@ class ConnectionServices {
       Fluttertoast.showToast(
           msg: "Something Wrong: $e",
           toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.CENTER,
+          gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
           backgroundColor: kPrimaryColor,
           textColor: Colors.white,
