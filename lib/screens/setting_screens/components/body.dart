@@ -73,7 +73,7 @@ class Body extends StatelessWidget {
                           showAboutPage(
                             context: context,
                             values: {
-                              'version': 'Beta',
+                              'version': 'Beta 0.2',
                               'year': DateTime.now().year.toString(),
                             },
                             applicationLegalese:

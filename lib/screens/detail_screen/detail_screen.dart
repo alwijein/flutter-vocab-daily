@@ -13,7 +13,7 @@ class DetailScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(vocabModel.vocabName),
+        title: Text(vocabModel.vocabName + ' | ' + vocabModel.v2 + ' | ' + vocabModel.v3 + ' | ' + vocabModel.arti),
       ),
       body: Body(
         vocabModel: vocabModel,

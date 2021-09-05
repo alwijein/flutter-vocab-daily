@@ -22,6 +22,7 @@ class CardBodySetting extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: Container(
+          color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
