@@ -14,14 +14,16 @@ AppBarTheme appBarTheme() {
       color: kPrimaryColor,
     ),
     color: kScaffoldColor,
+
     elevation: 0.0,
-    brightness: Brightness.light,
-    textTheme: TextTheme(
-        headline6: TextStyle(
-          color: kSecondaryColor,
-          fontSize: 18,
-        ),
-        caption: TextStyle(color: Colors.red)),
+    titleTextStyle: TextStyle(
+      color: kSecondaryColor,
+      fontSize: 18.0,
+    ),
+    toolbarTextStyle: TextStyle(
+       color: kSecondaryColor,
+      fontSize: 18.0,
+    ),
   );
 }
 

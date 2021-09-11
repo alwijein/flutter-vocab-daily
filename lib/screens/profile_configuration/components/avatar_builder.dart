@@ -26,7 +26,7 @@ class _AvatarBuilderState extends State<AvatarBuilder> {
       children: [
         Container(
           width: getPropertionateScreenWidht(400),
-          height: getPropertionateScreenHeight(290),
+          height: getPropertionateScreenHeight(300),
           child: PageView.builder(
             itemCount: 2,
             itemBuilder: (_, index) {

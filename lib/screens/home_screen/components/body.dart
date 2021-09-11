@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:vocab_daily/models/vocab_model.dart';
 import 'package:vocab_daily/screens/components/search_rounded.dart';
@@ -42,7 +44,7 @@ class Body extends StatelessWidget {
                               ),
                               itemCount: 2,
                               itemBuilder: (_, index) {
-                                VocabModel vocabModel = snapshoot.data![index];
+                                VocabModel vocabModel = snapshoot.data![ Random().nextInt(snapshoot.data!.length)];
                                 return VocabCard(
                                   vocabModel: vocabModel,
                                   title: vocabModel.vocabName,

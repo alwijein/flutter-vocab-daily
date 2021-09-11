@@ -12,7 +12,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     PersistentTabController _controller;
-
+    
     _controller = PersistentTabController(initialIndex: 0);
 
     return PersistentTabView(

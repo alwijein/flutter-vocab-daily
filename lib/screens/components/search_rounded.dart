@@ -35,6 +35,19 @@ class SearchRounded extends StatelessWidget {
                     delegate: SearchPage<VocabModel>(
                         items: snapshot.data ?? [],
                         searchLabel: 'Search vocab',
+                        barTheme: ThemeData(
+                          appBarTheme: AppBarTheme(
+                            iconTheme: IconThemeData(
+                              color: kPrimaryColor,
+                            ),
+                            color: kScaffoldColor,
+                            elevation: 0.0,
+                            titleTextStyle: TextStyle(
+                              color: kSecondaryColor,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ),
                         suggestion: Center(
                           child:
                               Text('Filter vocab by title, desc or variable'),

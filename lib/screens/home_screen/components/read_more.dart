@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vocab_daily/bloc/page_bloc/page_bloc.dart';
+import 'package:vocab_daily/screens/list_screen/list_screen.dart';
 import 'package:vocab_daily/shared/shared.dart';
 import 'package:vocab_daily/config/size_config.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ReadMore extends StatelessWidget {
   const ReadMore({
@@ -22,11 +25,18 @@ class ReadMore extends StatelessWidget {
               fontSize: getPropertionateScreenWidht(18),
             ),
           ),
-          Text(
-            "more",
-            style: TextStyle(
-              color: kSecondaryColor,
-              fontSize: getPropertionateScreenWidht(18),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_){
+                return ListScreen();
+              }));
+              },
+            child: Text(
+              "more",
+              style: TextStyle(
+                color: kSecondaryColor,
+                fontSize: getPropertionateScreenWidht(18),
+              ),
             ),
           ),
         ],
