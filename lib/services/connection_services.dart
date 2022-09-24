@@ -2,7 +2,7 @@ part of 'services.dart';
 
 class ConnectionServices {
   Future<List<VocabModel>> getApiRoot() async {
-    var response = await Dio().get('http://buthu.me:8001/api/katakerja/');
+    var response = await Dio().get('http://178.128.29.160:8000/api/katakerja/');
     // clearData();
     // generatedVocab();
     return VocabModel.vocabModel(response.data);
@@ -21,7 +21,7 @@ class ConnectionServices {
         'arti': faker.lorem.word(),
       });
       var response = await Dio()
-          .post('http://buthu.me:8001/api/katakerja/', data: formData);
+          .post('http://178.128.29.160:8000/api/katakerja/', data: formData);
     }
   }
 
@@ -32,7 +32,7 @@ class ConnectionServices {
         'kata_kerja_id': idv,
       });
       var response = await Dio()
-          .post('http://buthu.me:8001/api/vocabdaily/', data: formData);
+          .post('http://178.128.29.160:8000/api/vocabdaily/', data: formData);
       Fluttertoast.showToast(
           msg: "Input Berhasil",
           toastLength: Toast.LENGTH_LONG,
