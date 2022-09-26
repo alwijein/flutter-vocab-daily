@@ -8,6 +8,18 @@ class ConnectionServices {
     return VocabModel.vocabModel(response.data);
   }
 
+  Future<List<HistoriesModel>> getHistories() async {
+    var response =
+        await Dio().get('http://178.128.29.160:8000/api/vocabdaily/');
+
+    List<HistoriesModel> histories = [];
+    for (var item in response.data) {
+      histories.add(HistoriesModel.fromJson(item));
+    }
+
+    return histories;
+  }
+
   void generatedVocab() async {
     var faker = new Faker();
 

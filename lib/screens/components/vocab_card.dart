@@ -84,13 +84,13 @@ class VocabCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: FavoriteButton(
-                    valueChanged: press,
-                    iconSize: 40.0,
-                  ),
-                ),
+                // Expanded(
+                //   flex: 1,
+                //   child: FavoriteButton(
+                //     valueChanged: press,
+                //     iconSize: 40.0,
+                //   ),
+                // ),
               ],
             ),
           ),

@@ -8,7 +8,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ReadMore extends StatelessWidget {
   const ReadMore({
     Key? key,
+    required this.title,
+    required this.press,
   }) : super(key: key);
+
+  final String title;
+  final Function() press;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class ReadMore extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Vocab Today",
+            title,
             style: TextStyle(
               color: kTextColor,
               fontWeight: FontWeight.bold,
@@ -26,11 +31,7 @@ class ReadMore extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (_){
-                return ListScreen();
-              }));
-              },
+            onTap: press,
             child: Text(
               "more",
               style: TextStyle(

@@ -43,6 +43,7 @@ dependencies:
   fluttertoast: ^8.0.8
   flutter_launcher_icons: ^0.9.2
   about: ^2.0.1
+  platform: ^3.0.0
 
 dev_dependencies:
   flutter_test:

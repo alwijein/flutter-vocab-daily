@@ -6,6 +6,7 @@ import 'package:vocab_daily/screens/setting_screens/components/card_header_setti
 import 'package:vocab_daily/screens/setting_screens/components/privacy_policy.dart';
 import 'package:vocab_daily/screens/setting_screens/components/profile_edit.dart';
 import 'package:vocab_daily/screens/setting_screens/components/report.dart';
+import 'package:vocab_daily/screens/setting_screens/components/story_vocab.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -28,10 +29,15 @@ class Body extends StatelessWidget {
                     title: 'CONTENT',
                     item: [
                       CardBodySetting(
-                        iconData: Icons.favorite_outline,
-                        subTitle: 'Favorite',
+                        iconData: Icons.book,
+                        subTitle: 'Riwayat',
                         iconPath: 'assets/icons/back_arrow.svg',
-                        press: () {},
+                        press: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return StoryVocab();
+                          }));
+                        },
                       ),
                     ],
                   ),

@@ -66,7 +66,10 @@ class _RoundedFillState extends State<RoundedFill> {
                         child: GestureDetector(
                           onTap: () {
                             connectionServices.sendVocabTest(
-                                textEditingController.text, widget.idVocab);
+                              textEditingController.text,
+                              widget.idVocab,
+                            );
+                            textEditingController.text = '';
                           },
                           child: Container(
                             decoration: BoxDecoration(
